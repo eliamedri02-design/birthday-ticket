@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday ❤️</title>
+  <title>Buon Compleanno ❤️</title>
   <style>
     body {
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -27,72 +27,91 @@
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.2); }
     }
+
+    /* DECORAZIONI FIORI */
     .decorazioni {
       position: fixed;
       top: 50%;
       width: 100%;
       pointer-events: none;
     }
-
     .sinistra, .destra {
       position: absolute;
       font-size: 3em;
       opacity: 0.8;
     }
+    .sinistra { left: 20px; }
+    .destra { right: 20px; }
 
-    .sinistra {
-      left: 20px;
-    }
-
-    .destra {
-      right: 20px;
-     }
-
+    /* LUNE CHE FLUTTUANO */
     .lune {
-     margin-top: 40px;
-     font-size: 2em;
-     animation: fluttuare 4s ease-in-out infinite;
+      margin-top: 40px;
+      font-size: 2em;
+      animation: fluttuare 4s ease-in-out infinite;
     }
-
     @keyframes fluttuare {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
 
+    /* PULSANTE MUSICA */
+    #playSong {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin-top: 30px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6f91;
+      color: white;
+    }
+    #playSong:hover {
+      background-color: #ff4f70;
+    }
   </style>
-  
 </head>
-  
 <body>
 
-  <iframe
-    width="0"
-    height="0"
-    src="https://www.youtube.com/embed/hS_Csan5EIg?autoplay=1&loop=1&playlist=hS_Csan5EIg"
-    frameborder="0"
-    allow="autoplay">
-  </iframe>
-
-  <p class="lune">🌙 ✨ 🌙 ✨ 🌙</p>
-
-  
+  <!-- FIORI LATERALI -->
   <div class="decorazioni">
     <div class="sinistra">🌸🌷🌺</div>
     <div class="destra">🌺🌷🌸</div>
   </div>
 
-  
-
-  <h1>Happy Birthday Lu ❤️</h1>
-
+  <!-- TESTO CENTRALE -->
+  <h1>Buon compleanno, amore mio ❤️</h1>
   <p>
-    Learning Spanish wasn't enough, 
-    so I decided to learn a new programming 
-    language just for this virtual card.
+    Anche se ci separano chilometri e confini,<br>
+    il mio cuore oggi è tutto con te.<br>
+    Grazie per essere la persona meravigliosa che sei.<br>
+    Questo è il mio modo di stringerti forte, anche da lontano.
   </p>
-
   <p class="cuore">❤️ ❤️ ❤️</p>
 
+  <!-- LUNE CHE FLUTTUANO -->
+  <p class="lune">🌙 ✨ 🌙 ✨ 🌙</p>
+
+  <!-- PULSANTE PER LA CANZONE -->
+  <button id="playSong">🎵 Ascolta la nostra canzone</button>
+
+  <!-- IFRAME YOUTUBE NASCOSTO -->
+  <iframe id="videoPlayer" width="0" height="0"
+      src="https://www.youtube.com/embed/hS_Csan5EIg?playlist=hS_Csan5EIg"
+      frameborder="0"
+      allow="autoplay"
+      style="display:none;">
+  </iframe>
+
+  <!-- SCRIPT PULSANTE -->
+  <script>
+    document.getElementById('playSong').addEventListener('click', function() {
+        var iframe = document.getElementById('videoPlayer');
+        iframe.style.display = 'block'; // resta 0x0 se vuoi invisibile
+        iframe.src = "https://www.youtube.com/embed/hS_Csan5EIg?autoplay=1&playlist=hS_Csan5EIg";
+        this.style.display = 'none'; // nasconde il pulsante dopo il click
+    });
+  </script>
+
 </body>
-  
 </html>
+
