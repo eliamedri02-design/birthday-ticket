@@ -68,6 +68,9 @@
     #playSong:hover {
       background-color: #ff4f70;
     }
+
+    #videoPlayer { margin-top:20px; border-radius:10px; }
+
   </style>
 </head>
 <body>
@@ -96,22 +99,25 @@
   <button id="playSong">🎵 Listen to our favorite song </button>
 
   <!-- IFRAME YOUTUBE NASCOSTO -->
-  <iframe id="videoPlayer" width="0" height="0"
+   <iframe id="videoPlayer" width="200" height="113"
       src="https://www.youtube.com/embed/hS_Csan5EIg?playlist=hS_Csan5EIg"
       frameborder="0"
       allow="autoplay"
       style="display:none;">
   </iframe>
 
+
   <!-- SCRIPT PULSANTE -->
   <script>
     document.getElementById('playSong').addEventListener('click', function() {
         var iframe = document.getElementById('videoPlayer');
-        iframe.style.display = 'block'; // resta 0x0 se vuoi invisibile
+        iframe.style.display = 'block'; // ora il video appare piccolo
         iframe.src = "https://www.youtube.com/embed/hS_Csan5EIg?autoplay=1&playlist=hS_Csan5EIg";
-        this.style.display = 'none'; // nasconde il pulsante dopo il click
+        this.style.display = 'none'; // nasconde il pulsante
     });
   </script>
+  
+
 
 </body>
 </html>
