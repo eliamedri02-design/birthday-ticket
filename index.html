@@ -27,9 +27,61 @@
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.2); }
     }
+    .decorazioni {
+      position: fixed;
+      top: 50%;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .sinistra, .destra {
+      position: absolute;
+      font-size: 3em;
+      opacity: 0.8;
+    }
+
+    .sinistra {
+      left: 20px;
+    }
+
+    .destra {
+      right: 20px;
+     }
+
+    .lune {
+     margin-top: 40px;
+     font-size: 2em;
+     animation: fluttuare 4s ease-in-out infinite;
+    }
+
+    @keyframes fluttuare {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
   </style>
+  
 </head>
+  
 <body>
+
+  <iframe
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/hS_Csan5EIg?autoplay=1&loop=1&playlist=hS_Csan5EIg"
+    frameborder="0"
+    allow="autoplay">
+  </iframe>
+
+  <p class="lune">🌙 ✨ 🌙 ✨ 🌙</p>
+
+  
+  <div class="decorazioni">
+    <div class="sinistra">🌸🌷🌺</div>
+    <div class="destra">🌺🌷🌸</div>
+  </div>
+
+  
 
   <h1>Happy Birthday Lu ❤️</h1>
 
@@ -42,4 +94,5 @@
   <p class="cuore">❤️ ❤️ ❤️</p>
 
 </body>
+  
 </html>
